@@ -1,0 +1,107 @@
+{
+  "name": "extension-template-kitchensink",
+  "version": "0.8.1",
+  "description": "Looker Extension SDK functionality demonstration",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "start": "webpack-dev-server --hot --disable-host-check --port 8080",
+    "start-no-hot": "webpack-dev-server --no-inline --no-hot --port 8080",
+    "build": "export BABEL_ENV=build && tsc --skipLibCheck --noEmit && webpack --mode=production --config webpack.prod.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-data-server": "cp db.json temp_db.json && nodemon server/index.js"
+  },
+  "author": "Looker",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@hot-loader/react-dom": "^16.13.0",
+    "@looker/components": "0.9.6",
+    "@looker/embed-sdk": "1.0.0-beta.6",
+    "@looker/extension-sdk": "^0.11.0",
+    "@looker/extension-sdk-react": "^0.6.2",
+    "@looker/sdk": "0.3.0-beta.1",
+    "@octokit/core": "^3.1.2",
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.3",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/readable-stream": "^2.3.5",
+    "@types/semver": "^7.3.3",
+    "@types/styled-components": "4.1.8",
+    "@types/styled-system": "^5.1.3",
+    "ag-grid-community": "^23.2.1",
+    "ag-grid-react": "^23.2.1",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.0.6",
+    "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.1.0",
+    "file-saver": "^1.3.2",
+    "github-api": "^3.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "minimist": "^1.2.2",
+    "moment": "^2.24.0",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.20",
+    "react-papaparse": "^3.7.3",
+    "react-router-dom": "^5.1.2",
+    "react-tabulator": "^0.13.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.1",
+    "semver": "^7.3.2",
+    "styled-components": "^4.4.1",
+    "styled-system": "^5.1.2",
+    "url-loader": "^4.1.0",
+    "uuid": "^8.3.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.10.3",
+    "xlsx": "^0.16.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "@types/lodash": "^4.14.161",
+    "@types/moment": "^2.13.0",
+    "babel-preset-nano-react-app": "^0.1.0",
+    "css-loader": "^3.5.2",
+    "json-server": "^0.16.1",
+    "style-loader": "^1.1.3",
+    "ttypescript": "^1.5.11",
+    "typescript": "3.8.2",
+    "typescript-plugin-styled-components": "^1.4.4"
+  },
+  "babel": {
+    "presets": [
+      "nano-react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragmaFrag": "React.Fragment"
+        }
+      ]
+    ]
+  }
+}
